@@ -1,14 +1,8 @@
 source "https://rubygems.org"
 
-# Utiliser github-pages uniquement en production
-if ENV['JEKYLL_ENV'] == 'production'
-  gem "github-pages", group: :jekyll_plugins
-else
-  # En local, utiliser Jekyll moderne
-  gem "jekyll", "~> 4.3"
-  gem "minimal-mistakes-jekyll", "~> 4.27.3"
-  gem "sassc", "~> 2.4"
-end
+gem "jekyll", "~> 4.3"
+gem "minimal-mistakes-jekyll", "~> 4.27.3"
+gem "sassc", "~> 2.4"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"

@@ -25,14 +25,10 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: false  # Pas de cache !
-          
-      - name: Install dependencies
-        run: |
-          gem install bundler -v 2.4.22
-          bundle install
+          bundler-cache: true
           
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
         
       - name: Build with Jekyll
