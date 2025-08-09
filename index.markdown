@@ -1,11 +1,11 @@
 ---
 layout: single
-title: "Bem-vindos ao Entre Casca"
+title: "Entre Casca"
 header:
-  overlay_color: "#F8F9FA"
-  overlay_filter: "0.3"
+  overlay_color: "#FFFFFF"
+  overlay_filter: "0.1"
   overlay_image: /assets/images/workshop-header.jpg
-  excerpt: "Transformando madeira em arte há mais de 10 anos"
+  excerpt: "Ateliê de marcenaria artesanal"
 classes: wide
 ---
 
@@ -13,14 +13,22 @@ classes: wide
 /* Importação da fonte Montserrat / Import de la police Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
-/* Configuração global da fonte / Configuration globale de la police */
+/* Reset e configuração global / Reset et configuration globale */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #FFFFFF;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
+  color: #2C2C2C;
 }
 
 /* Bandeira grande de fundo / Grand drapeau d'arrière-plan */
@@ -34,154 +42,255 @@ h1, h2, h3, h4, h5, h6 {
   width: 120vw;
   height: auto;
   z-index: -1;
-  opacity: 0.25;
+  opacity: 0.08;
   pointer-events: none;
 }
 
-/* Container das cartas em grid / Conteneur des cartes en grille */
-.cards-container {
+/* Hero section estilo oficina.cc / Hero section style oficina.cc */
+.hero-section {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(135deg, #FAFAFA 0%, #F5F5F5 100%);
+  margin: -3rem -2rem 0;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.8;
+}
+
+/* Botão CTA principal / Bouton CTA principal */
+.cta-button {
+  display: inline-block;
+  background: #E91E63;
+  color: white;
+  padding: 1.2rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  margin-bottom: 4rem;
+}
+
+.cta-button:hover {
+  background: #C2185B;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+/* Grid de serviços estilo oficina.cc / Grille de services style oficina.cc */
+.services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-  padding: 0 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
 }
 
-/* Estilo das cartas principais / Style des cartes principales */
-.card {
-  position: relative;
-  height: 350px;
-  border-radius: 8px;
+.service-card {
+  background: white;
+  border-radius: 12px;
   overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid #F0F0F0;
 }
 
-/* Efeito hover das cartas / Effet hover des cartes */
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
 }
 
-/* Imagem de fundo das cartas / Image de fond des cartes */
-.card-image {
+.service-image {
   width: 100%;
-  height: 100%;
+  height: 250px;
   background-size: cover;
   background-position: center;
-  transition: transform 0.3s ease;
+  position: relative;
 }
 
-.card:hover .card-image {
-  transform: scale(1.1);
-}
-
-/* Overlay que aparece no hover / Overlay qui apparaît au survol */
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(248, 249, 250, 0.95), rgba(255, 251, 240, 0.9));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  text-align: center;
+.service-content {
   padding: 2rem;
 }
 
-.card:hover .card-overlay {
-  opacity: 1;
-}
-
-/* Título das cartas / Titre des cartes */
-.card-title {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  color: white;
-  padding: 2rem 1.5rem 1.5rem;
+.service-title {
   font-size: 1.5rem;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  text-align: center;
-}
-
-/* Texto descritivo no overlay / Texte descriptif dans l'overlay */
-.card-text {
-  color: #495057;
-  font-size: 1.1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  line-height: 1.6;
+  color: #2C2C2C;
   margin-bottom: 1rem;
 }
 
-/* Botões das cartas / Boutons des cartes */
-.card-button {
+.service-description {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.service-link {
+  color: #E91E63;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.service-link:hover {
+  color: #C2185B;
+  text-decoration: none;
+}
+
+/* About section / Section à propos */
+.about-section {
+  background: #FAFAFA;
+  padding: 6rem 2rem;
+  margin: 4rem -2rem 0;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 2rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Newsletter section minimaliste / Section newsletter minimaliste */
+.newsletter-section {
+  background: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  border-top: 1px solid #E5E5E5;
+}
+
+.newsletter-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 1rem;
+}
+
+.newsletter-description {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 400px;
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.newsletter-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 1rem 1.5rem;
+  border: 2px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter-input:focus {
+  border-color: #E91E63;
+}
+
+.newsletter-button {
   background: #E91E63;
   color: white;
-  padding: 0.8rem 2rem;
+  padding: 1rem 2rem;
   border: none;
-  border-radius: 4px;
-  font-family: 'Montserrat', sans-serif;
+  border-radius: 6px;
   font-weight: 600;
-  font-size: 0.95rem;
+  cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-block;
-  letter-spacing: 0.5px;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.card-button:hover {
+.newsletter-button:hover {
   background: #C2185B;
-  transform: scale(1.05);
-  color: white;
-  text-decoration: none;
+  transform: translateY(-2px);
 }
 
-/* Seção de introdução / Section d'introduction */
-.intro-section {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 3rem;
-  padding: 0 1rem;
-}
-
-.intro-section h2 {
-  color: #495057;
-  margin-bottom: 1rem;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-}
-
-.intro-section p {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-/* Responsividade para mobile / Responsive pour mobile */
+/* Responsividade / Responsive */
 @media (max-width: 768px) {
-  .cards-container {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .services-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+    padding: 0 1rem;
   }
   
-  .card {
-    height: 300px;
+  .hero-section,
+  .about-section,
+  .newsletter-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   
-  .card-title {
-    font-size: 1.3rem;
+  .newsletter-form {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .newsletter-input {
+    width: 100%;
+    min-width: auto;
   }
 }
 </style>
@@ -250,83 +359,82 @@ h1, h2, h3, h4, h5, h6 {
   </svg>
 </div>
 
-<div class="intro-section">
-  <!-- Cabeçalho principal / En-tête principal -->
-  <h2>Descubra o Mundo da Marcenaria</h2>
-  <p>Oferecemos oficinas práticas, aulas especializadas e criamos peças únicas originais. Explore nossos serviços e descubra como podemos ajudar a desenvolver suas habilidades em marcenaria.</p>
-</div>
+<!-- Hero Section -->
+<section class="hero-section">
+  <h1 class="hero-title">Entre Casca</h1>
+  <p class="hero-subtitle">Ateliê de marcenaria artesanal</p>
+  <p class="hero-description">
+    Transformamos madeira em arte há mais de 10 anos. Oferecemos oficinas práticas, aulas especializadas e criamos peças únicas originais que contam histórias através da madeira.
+  </p>
+  <a href="#servicos" class="cta-button">Descubra nossos serviços</a>
+</section>
 
-<div class="cards-container">
-  <!-- Card 1: Nossas Oficinas / Carte 1: Nos Ateliers -->
-  <div class="card" onclick="location.href='/oficinas/'">
-    <div class="card-image" style="background-image: url('{{ "/assets/images/oficina_tropical.jpg" | relative_url }}')"></div>
-    <div class="card-title">Nossas Oficinas</div>
-    <div class="card-overlay">
-      <div class="card-text">
-        Oficinas práticas para todos os níveis. Aprenda técnicas tradicionais e modernas em um ambiente acolhedor e criativo.
-      </div>
-      <a href="/oficinas/" class="card-button">Ver Oficinas</a>
+<!-- Services Grid -->
+<section id="servicos" class="services-grid">
+  <div class="service-card">
+    <div class="service-image" style="background-image: url('/assets/images/oficinas_grupo.webp')"></div>
+    <div class="service-content">
+      <h3 class="service-title">Nossas Oficinas</h3>
+      <p class="service-description">
+        Oficinas práticas para todos os níveis. Aprenda técnicas tradicionais e modernas em um ambiente acolhedor e criativo, desenvolvendo suas habilidades com a madeira.
+      </p>
+      <a href="/oficinas/" class="service-link">Ver todas as oficinas →</a>
     </div>
   </div>
 
-  <!-- Card 2: Aula de Marcenaria / Carte 2: Cours de Menuiserie -->
-  <div class="card" onclick="location.href='/aulas/'">
-    <div class="card-image" style="background-image: url('{{ "/assets/images/aula_marcenaria.png" | relative_url }}')"></div>
-    <div class="card-title">Aulas de Marcenaria</div>
-    <div class="card-overlay">
-      <div class="card-text">
-        Aulas personalizadas individuais ou em grupo. Reserve seu horário e venha aprender técnicas específicas com nossos especialistas.
-      </div>
-      <a href="/aulas/" class="card-button">Reservar Aula</a>
+  <div class="service-card">
+    <div class="service-image" style="background-image: url('/assets/images/oficina_tropical.webp')"></div>
+    <div class="service-content">
+      <h3 class="service-title">Aulas de Marcenaria</h3>
+      <p class="service-description">
+        Aulas personalizadas individuais ou em grupo. Reserve seu horário e venha aprender técnicas específicas com nossos especialistas em marcenaria.
+      </p>
+      <a href="/aulas/" class="service-link">Reservar uma aula →</a>
     </div>
   </div>
 
-  <!-- Card 3: Criações Originais / Carte 3: Créations Originales -->
-  <div class="card" onclick="location.href='/criacoes/'">
-    <div class="card-image" style="background-image: url('{{ "/assets/images/banco_bandeirola.webp" | relative_url }}')"></div>
-    <div class="card-title">Criações Originais</div>
-    <div class="card-overlay">
-      <div class="card-text">
-        Descubra nosso portfólio de peças únicas e originais. Cada criação conta uma história e está disponível para aquisição.
-      </div>
-      <a href="/criacoes/" class="card-button">Ver Portfólio</a>
+  <div class="service-card">
+    <div class="service-image" style="background-image: url('/assets/images/banco_bandeirola.webp')"></div>
+    <div class="service-content">
+      <h3 class="service-title">Criações Originais</h3>
+      <p class="service-description">
+        Descubra nosso portfólio de peças únicas e originais. Cada criação conta uma história e está disponível para aquisição por colecionadores e amantes da madeira.
+      </p>
+      <a href="/criacoes/" class="service-link">Explorar portfólio →</a>
     </div>
   </div>
+</section>
 
-  <!-- Card 4: Saiba Mais / Carte 4: En Savoir Plus -->
-  <div class="card" onclick="location.href='/sobre/'">
-    <div class="card-image" style="background-image: url('{{ "/assets/images/madeiras_patchwork.webp" | relative_url }}')"></div>
-    <div class="card-title">Saiba Mais</div>
-    <div class="card-overlay">
-      <div class="card-text">
-        Conheça nossa história, filosofia e equipe. Descubra por que somos referência em marcenaria artesanal e criativa.
-      </div>
-      <a href="/sobre/" class="card-button">Nossa História</a>
-    </div>
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-content">
+    <h2 class="about-title">Nossa História</h2>
+    <p class="about-text">
+      O Entre Casca nasceu da paixão pela madeira e pelo artesanato brasileiro. Há mais de uma década, criamos um espaço onde tradição e inovação se encontram, oferecendo experiências únicas de aprendizado e criação.
+    </p>
+    <p class="about-text">
+      Nosso ateliê é mais que um local de trabalho - é um ponto de encontro para artesãos, aprendizes e amantes da marcenaria que compartilham o amor pela transformação da madeira em arte.
+    </p>
+    <a href="/sobre/" class="cta-button">Conheça nossa equipe</a>
   </div>
-</div>
+</section>
 
-<!-- Seção Newsletter / Section Newsletter -->
-<div style="text-align: center; margin: 4rem 0; padding: 3rem; background: linear-gradient(135deg, #F8F9FA, #FFFBF0); border-radius: 8px; border: 1px solid #E9ECEF;">
-  <h3 style="color: #495057; margin-bottom: 1rem; font-weight: 600;">Fique por dentro</h3>
-  <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #6C757D;">Receba em primeira mão as nossas novidades</p>
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+  <h3 class="newsletter-title">Fique por dentro</h3>
+  <p class="newsletter-description">
+    Receba em primeira mão as nossas novidades, dicas de marcenaria e informações sobre novas oficinas.
+  </p>
   
-  <form name="newsletter" method="POST" data-netlify="true" style="max-width: 400px; margin: 0 auto;">
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-      <input type="email" 
-             name="email" 
-             placeholder="Seu melhor email..." 
-             required
-             style="flex: 1; min-width: 250px; padding: 1rem; border: 2px solid #E9ECEF; border-radius: 4px; font-size: 1rem; outline: none; transition: all 0.3s ease; background: white;"
-             onfocus="this.style.borderColor='#E91E63'; this.style.boxShadow='0 0 0 3px rgba(233, 30, 99, 0.1)'"
-             onblur="this.style.borderColor='#E9ECEF'; this.style.boxShadow='none'">
-      <button type="submit" 
-              style="background: linear-gradient(135deg, #E91E63, #C2185B); color: white; padding: 1rem 2rem; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; box-shadow: 0 4px 14px rgba(233, 30, 99, 0.3);"
-              onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(233, 30, 99, 0.4)'" 
-              onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='0 4px 14px rgba(233, 30, 99, 0.3)'">
-        Inscrever
-      </button>
-    </div>
+  <form name="newsletter" method="POST" data-netlify="true" class="newsletter-form">
+    <input type="email" 
+           name="email" 
+           placeholder="Seu melhor email..." 
+           required
+           class="newsletter-input">
+    <button type="submit" class="newsletter-button">
+      Inscrever-se
+    </button>
     <input type="hidden" name="form-name" value="newsletter">
   </form>
-</div>
+</section>
