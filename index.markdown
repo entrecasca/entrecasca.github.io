@@ -600,12 +600,9 @@ classes: wide
   <!-- Navigation Top -->
   <nav class="top-nav">
     <div class="nav-content">
-      <div class="logo">
-        <svg width="120" height="40" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="30" font-family="Montserrat, sans-serif" font-size="24" font-weight="700" fill="#E91E63">Entre</text>
-          <text x="60" y="30" font-family="Montserrat, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF">Casca</text>
-        </svg>
-      </div>
+        <div class="logo">
+        <img src="/assets/images/logo.png" alt="Entre Casca">
+        </div>
       <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
       <ul class="nav-links" id="navLinks">
         <li><a href="#oficinas">Oficinas</a></li>
