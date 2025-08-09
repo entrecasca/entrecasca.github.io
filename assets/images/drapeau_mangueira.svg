@@ -1,0 +1,60 @@
+<svg viewBox="0 0 400 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo rosa/magenta Mangueira / Background rose/magenta Mangueira -->
+  <rect width="400" height="280" fill="#E91E63"/>
+  
+  <!-- Padrões tribais de fundo / Motifs tribaux en arrière-plan -->
+  <defs>
+    <pattern id="tribalPatternPreview" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M20,5 L35,20 L20,35 L5,20 Z" fill="none" stroke="#C2185B" stroke-width="1" opacity="0.5"/>
+      <circle cx="20" cy="20" r="3" fill="#C2185B" opacity="0.3"/>
+    </pattern>
+    
+    <pattern id="barkTexturePreview" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M0,10 Q5,5 10,10 T20,10" fill="none" stroke="#C2185B" stroke-width="0.8" opacity="0.3"/>
+      <path d="M0,15 Q5,12 10,15 T20,15" fill="none" stroke="#C2185B" stroke-width="0.8" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <rect width="400" height="280" fill="url(#tribalPatternPreview)"/>
+  <rect width="400" height="280" fill="url(#barkTexturePreview)"/>
+  
+  <!-- Losango branco estilizado / Losange blanc stylisé -->
+  <path d="M200,40 L360,140 L200,240 L40,140 Z" fill="#FFFFFF" stroke="#F0F0F0" stroke-width="3"/>
+  
+  <!-- Círculo verde Mangueira central / Cercle vert Mangueira central -->
+  <circle cx="200" cy="140" r="80" fill="#4CAF50" stroke="#388E3C" stroke-width="4"/>
+  
+  <!-- Padrões tribais no círculo verde / Motifs tribaux sur le cercle vert -->
+  <g stroke="#66BB6A" stroke-width="2" fill="none" opacity="0.8">
+    <circle cx="200" cy="140" r="65" stroke-dasharray="12,6"/>
+    <circle cx="200" cy="140" r="55" stroke-dasharray="8,4"/>
+    <circle cx="200" cy="140" r="45" stroke-dasharray="6,3"/>
+    <circle cx="200" cy="140" r="35" stroke-dasharray="4,2"/>
+    
+    <!-- Cruz direcional indígena / Croix directionnelle indigène -->
+    <path d="M200,90 L200,190 M150,140 L250,140"/>
+    <path d="M175,115 L225,165 M225,115 L175,165"/>
+    
+    <!-- Padrões radiais / Motifs radiaux -->
+    <path d="M200,140 L170,110 M200,140 L230,110 M200,140 L230,170 M200,140 L170,170"/>
+    <path d="M200,140 L185,105 M200,140 L215,105 M200,140 L215,175 M200,140 L185,175"/>
+  </g>
+  
+  <!-- Pontos cardeais tribais maiores / Points cardinaux tribaux plus grands -->
+  <g fill="#66BB6A" opacity="0.9">
+    <circle cx="200" cy="100" r="6"/>
+    <circle cx="200" cy="180" r="6"/>
+    <circle cx="160" cy="140" r="6"/>
+    <circle cx="240" cy="140" r="6"/>
+  </g>
+  
+  <!-- Estrelas estilizadas no círculo verde / Étoiles stylisées dans le cercle vert -->
+  <g fill="#FFFFFF" opacity="1">
+    <path d="M180,120 L182,125 L187,125 L183,128 L185,133 L180,130 L175,133 L177,128 L173,125 L178,125 Z"/>
+    <path d="M220,160 L222,165 L227,165 L223,168 L225,173 L220,170 L215,173 L217,168 L213,165 L218,165 Z"/>
+    <circle cx="170" cy="155" r="3"/>
+    <circle cx="230" cy="125" r="3"/>
+    <circle cx="185" cy="170" r="2.5"/>
+    <circle cx="215" cy="110" r="2.5"/>
+  </g>
+</svg>
