@@ -47,9 +47,10 @@ body {
 }
 
 .nav-logo img {
-    height: 40px;
+    height: 50px;
     width: auto;
-    max-width: 120px;
+    max-width: 100%;
+    display: block,
 }
 
 .nav-menu {
@@ -80,7 +81,7 @@ body {
 
 /* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ "/assets/images/stock_oficina.jpg" | relative_url }}');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ "/assets/images/painel_de_ferramenta.jpg" | relative_url }}');
     background-size: cover;
     background-position: center;
     height: 70vh;
@@ -150,7 +151,7 @@ body {
 
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
 }
@@ -328,9 +329,7 @@ body {
 </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul class="nav-menu" id="navMenu">
-            <li><a href="#services">Oficinas</a></li>
-            <li><a href="#services">Aulas</a></li>
-            <li><a href="#services">Criações</a></li>
+            <li><a href="#services">Quem Somos</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
     </div>
@@ -348,25 +347,32 @@ body {
 <!-- Services -->
 <section class="services" id="services">
     <div class="container">
-        <h2 class="section-title">Nossos Serviços</h2>
         <p class="section-subtitle">Do aprendizado à criação, oferecemos experiências completas em marcenaria artesanal</p>
         
         <div class="cards-grid">
             <div class="card">
-                <img src="{{ '/assets/images/escrivaninha_pinceis.jpg' | relative_url }}" alt="Oficinas Práticas">
+                <img src="{{ '/assets/images/banco_bandeirola.jpeg' | relative_url }}" alt="Oficina De Banco Bandeirola">
                 <div class="card-content">
-                    <h3>Oficinas Práticas</h3>
-                    <p>Oficinas intensivas para todos os níveis, onde você aprende fazendo. Técnicas tradicionais e modernas em um ambiente colaborativo.</p>
-                    <a href="#" class="btn">Ver Oficinas</a>
+                    <h3>Oficina de Banco Bandeirola</h3>
+                    <p>Talvez o banco mais brasileiro que existe, fiel companheiro das obras que levantam este Brasil.</p>
+                    <a href="#" class="btn">Ver Oficina</a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="{{ '/assets/images/cortando_madeira.jpg' | relative_url }}" alt="Aulas Personalizadas">
+                <img src="{{ '/assets/images/composteira.jpeg' | relative_url }}" alt="Aulas Personalizadas">
                 <div class="card-content">
-                    <h3>Aulas Personalizadas</h3>
-                    <p>Aulas individuais ou em pequenos grupos, focadas nas suas necessidades específicas e ritmo de aprendizado.</p>
-                    <a href="#" class="btn">Agendar Aula</a>
+                    <h3>Oficina de Composteira</h3>
+                    <p>ESPERANDO O LUCAS</p>
+                    <a href="#" class="btn">Ver Oficina</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ '/assets/images/abelhas.jpeg' | relative_url }}" alt="Aulas Personalizadas">
+                <div class="card-content">
+                    <h3>Oficina Semeando Meliponários</h3>
+                    <p>Com a chegada da Primavera, convidamos você para uma oficina especial de construção de meliponários — abrigos dedicados às abelhas nativas, essenciais para a biodiversidade.</p>
+                    <a href="#" class="btn">Ver Oficina</a>
                 </div>
             </div>
         </div>
