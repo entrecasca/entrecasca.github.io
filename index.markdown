@@ -47,10 +47,10 @@ body {
 }
 
 .nav-logo img {
-    height: 50px;
+    height: 40px;
     width: auto;
     max-width: 100%;
-    display: block,
+    display: block;
 }
 
 .nav-menu {
@@ -84,7 +84,7 @@ body {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ "/assets/images/painel_de_ferramenta.jpg" | relative_url }}');
     background-size: cover;
     background-position: center;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -104,8 +104,12 @@ body {
     max-width: 600px;
 }
 
+a:visited {
+    color: #ffffff;
+} 
+
 .btn {
-    background: #E91E63;
+    background: #000000;
     color: white;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -116,13 +120,13 @@ body {
 }
 
 .btn:hover {
-    background: #C2185B;
+    background: #FAC200;
     color: white;
 }
 
 /* SERVICES */
 .services {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background: #f8f8f8;
 }
 
@@ -136,6 +140,7 @@ body {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     color: #1A1A1A;
 }
 
@@ -143,7 +148,7 @@ body {
     text-align: center;
     font-size: 1.1rem;
     color: #666;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -179,7 +184,8 @@ body {
 }
 
 .card h3 {
-    font-size: 1.3rem;
+    margin: 0.5em 0 0.5em;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
     color: #1A1A1A;
 }
@@ -188,6 +194,7 @@ body {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    font-size: 1rem;
 }
 
 .card .btn {
@@ -195,53 +202,54 @@ body {
     padding: 0.75rem 1.5rem;
 }
 
-/* CONTACT */
-.contact {
-    background: #1A1A1A;
-    color: white;
-    padding: 3rem 0;
+/* QUEM SOMOS */
+.quem-somos {
+    padding: 2rem 0;
+    background: white;
+}
+
+.quem-somos-content {
     text-align: center;
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.contact p {
-    font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #ccc;
 }
 
-.contact-form {
-    max-width: 500px;
+.quem-somos h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: #1A1A1A;
+}
+
+.quem-somos-text {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 800px;
     margin: 0 auto;
-    display: flex;
+    line-height: 1.7;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
+    margin-top: 2rem;
 }
 
-.contact-form input {
-    flex: 1;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+.gallery-item {
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    transition: transform 0.3s;
 }
 
-.contact-form button {
-    background: #E91E63;
-    color: white;
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s;
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
-.contact-form button:hover {
-    background: #C2185B;
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* WhatsApp Button */
@@ -249,24 +257,17 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #25D366;
-    color: white;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0);
     z-index: 1000;
     transition: transform 0.3s;
+    overflow: hidden;
 }
 
 .whatsapp:hover {
     transform: scale(1.1);
-    color: white;
 }
 
 /* MOBILE */
@@ -306,10 +307,12 @@ body {
 
     .section-title {
         font-size: 2rem;
+        margin-top: 1rem;
     }
 
-    .contact-form {
-        flex-direction: column;
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 
     .whatsapp {
@@ -317,7 +320,6 @@ body {
         height: 50px;
         bottom: 15px;
         right: 15px;
-        font-size: 1.2rem;
     }
 }
 </style>
@@ -329,8 +331,9 @@ body {
 </a>
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
         <ul class="nav-menu" id="navMenu">
-            <li><a href="#services">Quem Somos</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li><a href="#services">Oficinas</a></li>
+            <li><a href="#quem-somos">Quem Somos</a></li>
+            <li><a href="https://wa.me/5519989801351">Contato</a></li>
         </ul>
     </div>
 </nav>
@@ -347,15 +350,16 @@ body {
 <!-- Services -->
 <section class="services" id="services">
     <div class="container">
+        <h2 class="section-title">Nossas Oficinas</h2>
         <p class="section-subtitle">Do aprendizado à criação, oferecemos experiências completas em marcenaria artesanal</p>
         
         <div class="cards-grid">
             <div class="card">
-                <img src="{{ '/assets/images/banco_bandeirola.jpeg' | relative_url }}" alt="Oficina De Banco Bandeirola">
+                <img src="{{ '/assets/images/bandeirola.png' | relative_url }}" alt="Oficina De Banco Bandeirola">
                 <div class="card-content">
                     <h3>Oficina de Banco Bandeirola</h3>
                     <p>Talvez o banco mais brasileiro que existe, fiel companheiro das obras que levantam este Brasil.</p>
-                    <a href="#" class="btn">Ver Oficina</a>
+                    <a href="{{ '/oficina-banco-bandeirola' | relative_url }}" class="btn">Ver Oficina</a>                
                 </div>
             </div>
 
@@ -371,7 +375,7 @@ body {
                 <img src="{{ '/assets/images/abelhas.jpeg' | relative_url }}" alt="Aulas Personalizadas">
                 <div class="card-content">
                     <h3>Oficina Semeando Meliponários</h3>
-                    <p>Com a chegada da Primavera, convidamos você para uma oficina especial de construção de meliponários — abrigos dedicados às abelhas nativas, essenciais para a biodiversidade.</p>
+                    <p>Com a chegada da Primavera, convidamos você para uma oficina especial de construção de meliponários.</p>
                     <a href="#" class="btn">Ver Oficina</a>
                 </div>
             </div>
@@ -379,22 +383,52 @@ body {
     </div>
 </section>
 
-<!-- Contact -->
-<section class="contact" id="contact">
+<!-- Quem Somos -->
+<section class="quem-somos" id="quem-somos">
     <div class="container">
-        <h2>Entre em Contato</h2>
-        <p>Interessado em nossos serviços? Envie seu email e entraremos em contato!</p>
+        <div class="quem-somos-content">
+            <h2>Quem Somos</h2>
+            <p class="quem-somos-text">
+                Há mais de 10 anos, o Entre Casca é um ateliê de marcenaria artesanal dedicado a transformar madeira em arte. 
+                Nosso espaço é onde tradição e criatividade se encontram, oferecendo oficinas que ensinam técnicas ancestrais 
+                de marcenaria enquanto criamos peças únicas e funcionais. Acreditamos que trabalhar com madeira é uma forma 
+                de conexão com a natureza e com nossa própria essência criativa.
+            </p>
+        </div>
         
-        <form class="contact-form" name="contact" method="POST" data-netlify="true">
-            <input type="email" name="email" placeholder="Seu email..." required>
-            <button type="submit">Enviar</button>
-            <input type="hidden" name="form-name" value="contact">
-        </form>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/ping_pong.jpg' | relative_url }}" alt="Ateliê Entre Casca">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/oficina_falando.jpeg' | relative_url }}" alt="Oficina de marcenaria">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/suporte_planta.jpg' | relative_url }}" alt="Ferramentas artesanais">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/movel_pia.jpg' | relative_url }}" alt="Peças em madeira">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/casa_criança.jpg' | relative_url }}" alt="Processo criativo">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/caixinha.jpg' | relative_url }}" alt="Detalhes em madeira">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/oficina_folha.jpg' | relative_url }}" alt="Trabalho artesanal">
+            </div>
+            <div class="gallery-item">
+                <img src="{{ '/assets/images/super_mesa.jpg' | relative_url }}" alt="Ateliê em ação">
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- WhatsApp -->
-<a href="https://wa.me/5511999999999" class="whatsapp" target="_blank">💬</a>
+<a href="https://wa.me/5519989801351" class="whatsapp" target="_blank">
+    <img src="{{ '/assets/images/whatsapp.webp' | relative_url }}" alt="WhatsApp">
+</a>
 
 <script>
 function toggleMenu() {
@@ -418,12 +452,5 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             target.scrollIntoView({ behavior: 'smooth' });
         }
     });
-});
-
-// Form handling
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-    const button = this.querySelector('button');
-    button.textContent = 'Enviando...';
-    button.disabled = true;
 });
 </script>

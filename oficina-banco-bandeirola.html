@@ -1,0 +1,467 @@
+---
+layout: default
+title: "Oficina de Banco Bandeirola"
+---
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Hide Jekyll default elements */
+.masthead, .page__hero, .page__hero--overlay {
+    display: none !important;
+}
+
+/* NAVIGATION */
+.custom-nav {
+    background: #1A1A1A;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-logo img {
+    height: 40px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
+
+.nav-menu a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #E91E63;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* WORKSHOP HERO */
+.workshop-hero {
+    position: relative;
+    height: 60vh;
+    overflow: hidden;
+    background: url('{{ "/assets/images/banco_bandeirola.jpeg" | relative_url }}') center/cover;
+}
+
+.workshop-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workshop-title {
+    text-align: center;
+    color: white;
+}
+
+.workshop-title h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.workshop-title .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* WORKSHOP CONTENT */
+.workshop-content {
+    padding: 4rem 0;
+    background: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1.2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.workshop-description h2 {
+    font-size: 2rem;
+    color: #1A1A1A;
+    margin-bottom: 1.5rem;
+}
+
+.workshop-description p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.workshop-description strong {
+    color: #E91E63;
+}
+
+.workshop-sidebar {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #E91E63;
+}
+
+.workshop-info h3 {
+    font-size: 1.4rem;
+    color: #1A1A1A;
+    margin-bottom: 1rem;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #E91E63;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.info-value {
+    color: #666;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1A1A1A;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    background: #000000;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    transition: background 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+}
+
+a:visited {
+    color: white;
+}
+
+.btn:hover {
+    background: #FAC200;
+    color: white;
+}
+
+/* CONTACT FORM */
+.contact-section {
+    background: #1A1A1A;
+    color: white;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.contact-form textarea {
+    grid-column: 1 / -1;
+    resize: vertical;
+    height: 120px;
+}
+
+.contact-form button {
+    background: #E91E63;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+    font-size: 1rem;
+}
+
+.contact-form button:hover {
+    background: #C2185B;
+}
+
+/* WhatsApp Button */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0);
+    z-index: 1000;
+    transition: transform 0.3s;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp img {
+    width: 85%;
+    height: 85%;
+    object-fit: cover;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #1A1A1A;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .workshop-title h1 {
+        font-size: 2rem;
+    }
+
+    .workshop-title .subtitle {
+        font-size: 1rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .workshop-sidebar {
+        order: -1;
+    }
+
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+
+    .whatsapp {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+}
+</style>
+
+<!-- Navigation -->
+<nav class="custom-nav">
+    <div class="nav-container">
+        <a href="{{ '/' | relative_url }}" class="nav-logo">
+            <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Entre Casca">
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="{{ '/' | relative_url }}">Início</a></li>
+            <li><a href="{{ '/#services' | relative_url }}">Oficinas</a></li>
+            <li><a href="https://wa.me/5519989801351">Contato</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Workshop Hero -->
+<section class="workshop-hero">
+    <div class="workshop-overlay">
+        <div class="workshop-title">
+            <h1>Oficina de Banco Bandeirola</h1>
+            <p class="subtitle">Talvez o banco mais brasileiro que existe</p>
+        </div>
+    </div>
+</section>
+
+<!-- Workshop Content -->
+<section class="workshop-content">
+    <div class="container">
+        <div class="content-grid">
+            <div class="workshop-description">
+                <h2>Com quantas bandeiras se constrói o Brasil?</h2>
+                
+                <p>São as pequenas bandeirinhas das festas juninas, cheias de cores, formas e vida. São também as inúmeras bandeiras que tremulam pelas cidades, contando histórias de muitos Brasis — desde aquele que carrega a promessa de <em>ordem e progresso</em> até o que se constrói, dia após dia, com muitas mãos, suor e trabalho nos canteiros de obra.</p>
+                
+                <p>Inspirados neste símbolo tão presente na construção do país, nossa oficina será dedicada ao <strong>Banco Bandeirola</strong> — talvez o banco mais brasileiro que existe, fiel companheiro das obras que levantam este Brasil.</p>
+                
+                <p>No curso de introdução à marcenaria, cada aluno desenvolve seu banco em um encontro único, aprendendo <strong>técnicas básicas de marcenaria</strong> com o uso de ferramentas manuais.</p>
+            </div>
+
+            <div class="workshop-sidebar">
+                <div class="workshop-info">
+                    <h3>Informações da Oficina</h3>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Datas Disponíveis:</span>
+                        <div class="info-value">
+                            30 de agosto das 9h às 13h<br>
+                            03 de setembro das 18h às 22h
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">Duração:</span>
+                        <span class="info-value">4 horas</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <span class="info-label">O que você vai aprender:</span>
+                        <span class="info-value">Técnicas básicas de marcenaria com ferramentas manuais</span>
+                    </div>
+                    
+                    <div class="price">R$ 250</div>
+                    
+                    <a href="https://wa.me/5519989801351" class="btn">Quero Participar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/5519989801351" class="whatsapp" target="_blank">
+    <img src="{{ '/assets/images/whatsapp.webp' | relative_url }}" alt="WhatsApp">
+</a>
+
+<script>
+function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('active');
+}
+
+// Close menu when clicking on links
+document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
+    });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
+</script>
